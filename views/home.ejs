@@ -9,20 +9,22 @@
 <body>
     <h1> Posts </h1>
     <div class="posts">
+        <% if (locals.data) {%>
         <div class="post">
-                <div class="title"> Title: </div> 
-                <div class="content"> Content: </div>
+                <div class="title"> <%= data.title%> </div> 
+                <div class="content"> <%= data.content %> </div>
                 <div class="buttons">
                     <button class="button edit">EDIT</button>
                     <button class="button delete">DELETE</button>
                 </div>
 
             <p>
-                <span class="date"> Date: </span> <br>
-                <span class="author"> Author: </span>
+                <span class="author"> <%= data.by %> </span><br>
+                <span class="date"> <%= data.date %> </span>
             </p>
             <hr>
         </div>
+        <% } %>
     </div>    
 </body>
 </html>
