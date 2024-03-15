@@ -9,22 +9,24 @@
 <body>
     <h1> Posts </h1>
     <div class="posts">
-        <% if (locals.data) {%>
+        <% if (locals.data) { data.forEach(item => {%>
         <div class="post">
-                <div class="title"> <%= data.title%> </div> 
-                <div class="content"> <%= data.content %> </div>
+                <div class="title"> <%= item.title%> </div> 
+                <div class="content"> <%= item.content %> </div>
                 <div class="buttons">
                     <button class="button edit">EDIT</button>
                     <button class="button delete">DELETE</button>
                 </div>
 
             <p>
-                <span class="author"> <%= data.by %> </span><br>
-                <span class="date"> <%= data.date %> </span>
+                <span class="author"> <%= item.by %> </span><br>
+                <span class="date"> <%= item.date %> </span>
             </p>
-            <hr>
         </div>
-        <% } %>
+        <hr>
+        <% })} else { %>
+            <h2>No data available</h2>
+        <%}%>
     </div>    
 </body>
 </html>

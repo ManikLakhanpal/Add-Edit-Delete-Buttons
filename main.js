@@ -17,7 +17,7 @@ app.get("/home", async (req,res) => {
     try {
         const resp = await axios.get(`${server_url}/posts`);
         res.render("home.ejs", {
-            data: resp.data[0]
+            data: resp.data
         });
     } catch(err) {
         console.log(err);
